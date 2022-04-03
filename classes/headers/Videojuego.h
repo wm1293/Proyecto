@@ -7,23 +7,24 @@ using namespace std;
 class Partida;
 
 class Videojuego{
-    private:
-        string nombre;
+    
 
     public:
 
         enum TipoJuego {Accion,Aventura,Deporte,Otro};
+        static const int MAX_PARTIDAS = 10;
         //Constructor
-        Videojuego(string,TipoJuego);
-
-
-
+        Videojuego(string nombre,TipoJuego tipoJuego);
 
       
         //Destructor
         ~Videojuego();
 
-
+    private:
+        string nombre;
+        TipoJuego tipoJuego;
+        
+        Partida **partidas;
 
 };
 

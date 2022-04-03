@@ -4,16 +4,19 @@
 
 class Jugador;
 
+
 class PartidaMultijugador : public Partida {
 
         private:
 
-        public:
-        PartidaMultijugador();
-        bool continuaPartidaAnterior();        
-        float darTotalHorasParticipantes();
+        Jugador *jugador;
 
-        ~PartidaMultijugador();
+        public:
+            PartidaMultijugador(DtFechaHora fechaHora, float duracion);
+            bool trasmitirVivo();        
+            float darTotalHorasParticipantes();
+
+            ~PartidaMultijugador();
 
 };
 
