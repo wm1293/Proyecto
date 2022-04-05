@@ -90,18 +90,21 @@ int main(){
 
         if(comando == 3){   
 
-            int cantJugadores;
             
-            cout << "Ingresar la cantidad de jugadores a mostrar. Maximo 10" << endl;
-            cin >> cantJugadores;
-
-            DtJugador **dtJugadores = new DtJugador*[cantJugadores];
+            int aux = 0;
+            aux = cantJugadores;
+            //DtJugador **dtJugadores = new DtJugador*[cantJugadores];
+            DtJugador **dtJugadores = new DtJugador*[aux];
             dtJugadores = obtenerJugadores(cantJugadores);
             //obtenerJugadores(cantJugadores);
-            //mostrarJugadores(cantJugadores);        
+            //mostrarJugadores(cantJugadores);  
+                      
             for (int i = 0 ; i < cantJugadores ; i++){
-                cout << "Nickname: " << dtJugadores[i]->getNickname() << endl;
+                
+                cout << "hay -> " << dtJugadores[i]->getNickname() << endl;
             }
+
+            //cout << "aca -> " << dtJugadores[0]->getNickname() << endl;
             
         }
 
@@ -142,15 +145,18 @@ DtJugador** obtenerJugadores(int &cantJugadores){
    */
 
  // creamos el arreglo de Dt Jugadores que vamos a retornar
-    //DtJugador** jugadores = new DtJugador *[cantJugadores];
+    Jugador** jugadores = new Jugador *[cantJugadores];
     DtJugador **Dtjugadores = new DtJugador*[cantJugadores];
+    
     
     //un for con la cantidad de jugadores a devolver
     
     //cargo los valores en el dt
     for (int i = 0; i < cantJugadores ; i++){
+        cout << "entro al for." << endl;
         Dtjugadores[i]->setNickname(jugadores[i]->getNickname());
-        Dtjugadores[i]->setEdad(jugadores[i]->getEdad());
+        cout << Dtjugadores[i]->getNickname() << endl;
+        //Dtjugadores[i]->setEdad(jugadores[i]->getEdad());
     }
         //muestro los valores
     /*std::cout << "Mostramos Jugadores" << endl;

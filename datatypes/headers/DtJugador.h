@@ -1,7 +1,7 @@
 #ifndef DTJUGADOR_H
 #define DTJUGADOR_H
 
-#include "../headers/DtPartida.h"
+#include "../headers/DtJugador.h"
 #include <iostream>
 
 using namespace std;
@@ -12,7 +12,7 @@ class DtJugador {
     private:
     string nickname;
     int edad;
-    
+    int cantJugadores;
 
     public:
         
