@@ -24,6 +24,7 @@ class DtJugador {
         //un Datatype tiene sentido que tenga setting ?
         void setNickname(string nickname);
         void setEdad(int edad);
+        void setCantidadJugadores();
         
         
         

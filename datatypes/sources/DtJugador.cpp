@@ -12,3 +12,14 @@ void DtJugador::setNickname(string nickname){
 void DtJugador::setEdad(int edad){
     this->edad = edad;
 }
+
+int DtJugador::getEdad(){
+    return this->edad;
+    }
+string DtJugador::getNickname(){
+    return this->nickname;
+}
+
+void DtJugador::setCantidadJugadores(){
+     this->cantJugadores++;
+}

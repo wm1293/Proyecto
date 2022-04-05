@@ -20,20 +20,32 @@ class Jugador {
     //PSEUDOATRIBUTOS QUE DEMUESTRAN LAS ASOCIACIONES
     Partida **partidas;
 
+    Jugador **jugadores;  
+
     public:
         
+        Jugador();
         Jugador(string nickname, int edad, string pass);
+        static const int MAX_JUGADORES = 10;
 
         string getNickname();
         int getEdad();
         string getPass();
+        int getCantidadJugadores();
+        
+
+        
 
         void setNickname(string nickname);
         void setEdad(int edad);
         void setPass(string pass);
+        void setCantidadJugadores();
+        void agregarJugador(Jugador *jugador);
+        Jugador **getJugadores();
         
         //float darTotalHorasParticipantes();
-        void agregarJugador(string nickname, int edad, string pass);
+        //void agregarJugador(string nickname, int edad, string pass);
+        
         ~Jugador();
 
 };
