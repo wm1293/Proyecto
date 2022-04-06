@@ -136,34 +136,30 @@ int main(){
 
 DtJugador** obtenerJugadores(int &cantJugadores){  
    
-   std::cout << "Entramos en OBTENER Jugadores" << endl;
+
    /*
     for (int i = 0; i < cantJugadores ; i++){
         std::cout << "Nickname: " << jugadores[i]->getNickname() << " Edad: " << jugadores[i]->getEdad() << endl;
     }
 
    */
-
+/*  Jugador *jugador = new Jugador(nickname,edad,pass);
+         jugadores[cantJugadores] = jugador;
+         cantJugadores++;
+         */
  // creamos el arreglo de Dt Jugadores que vamos a retornar
-    Jugador** jugadores = new Jugador *[cantJugadores];
+    //Jugador** jugadores = new Jugador *[cantJugadores];
     DtJugador **Dtjugadores = new DtJugador*[cantJugadores];
-    
-    
-    //un for con la cantidad de jugadores a devolver
-    
-    //cargo los valores en el dt
-    for (int i = 0; i < cantJugadores ; i++){
-        cout << "entro al for." << endl;
-        Dtjugadores[i]->setNickname(jugadores[i]->getNickname());
-        cout << Dtjugadores[i]->getNickname() << endl;
-        //Dtjugadores[i]->setEdad(jugadores[i]->getEdad());
+     cout << "Mostrando algo...." << endl;
+   for (int i = 0; i < cantJugadores ; i++){
+        std::cout << "Nickname: " << jugadores[i]->getNickname() << " Edad: " << jugadores[i]->getEdad() << endl;
     }
-        //muestro los valores
-    /*std::cout << "Mostramos Jugadores" << endl;
-    for (int i = 0; i < cantJugadores ; i++){
-        std::cout << "Nickname: " << Dtjugadores[i]->getNickname() << " Edad: " << Dtjugadores[i]->getEdad() << endl;
-    }*/
 
+   
+
+
+    
+   
 
     return Dtjugadores; 
 } 
@@ -184,16 +180,41 @@ void agregarJugador(string nickname, int edad, string pass){
         throw std::invalid_argument("El Jugador ya existe.");       
                 
     }  
+
+     
      
     if(existeJugador == false)
     {                      
         
+         /*
+         
          Jugador *jugador = new Jugador(nickname,edad,pass);
          jugadores[cantJugadores] = jugador;
          cantJugadores++;
          
+         */
+
+        DtJugador **dtJugadores = new DtJugador*[cantJugadores];
+
+        DtJugador *nuevo = new DtJugador(nickname,edad);
+        string auxn = "";
+        int auxe = 0;
+        auxn = nuevo->getNickname();
+        auxe = nuevo->getEdad();
+
+        for (int i = 0; i < cantJugadores ; i++){
+            dtJugadores[i]->setNickname(auxn);
+            dtJugadores[i]->setEdad(auxe);
+        }
+
+
+        dtJugadores[cantJugadores] = nuevo;
+        cantJugadores++;
+         
     }      
     
+    
+   
 
 }
 
