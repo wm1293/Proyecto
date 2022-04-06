@@ -26,7 +26,7 @@ class DtJugador {
         void setEdad(int edad);
         void setCantidadJugadores();
         
-        
+        //DtJugador **Dtjugadores (DtJugador *jugador, &cantJugadores);
         
         ~DtJugador();
 

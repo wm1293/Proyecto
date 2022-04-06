@@ -23,3 +23,5 @@ string DtJugador::getNickname(){
 void DtJugador::setCantidadJugadores(){
      this->cantJugadores++;
 }
+
+ 
